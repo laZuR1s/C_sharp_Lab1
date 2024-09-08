@@ -14,8 +14,8 @@ namespace test
     public partial class Form1 : Form
     {
         private int clickCount = 0;
-        private string[] icons = { "C:\\Users\\sasha\\Downloads\\Papirus-Team-Papirus-Apps-Youtube.ico", "C:\\Users\\sasha\\Downloads\\Froyoshark-Enkel-Telegram.ico",
-            "C:\\Users\\sasha\\Downloads\\Papirus-Team-Papirus-Apps-Gnome-twitch.ico" };
+        private string[] icons = { "Youtube.ico", "Telegram.ico",
+            "Twitch.ico" };
         
         public Form1()
         {
@@ -23,7 +23,7 @@ namespace test
             Text = "Начальная форма";
             this.BackColor = Color.Aqua;
             this.Size = new Size(1000, 1000);
-            this.Icon = new Icon("C:\\Users\\sasha\\Downloads\\Papirus-Team-Papirus-Apps-Youtube.ico");
+            this.Icon = new Icon("Youtube.ico");
             this.MouseClick += new MouseEventHandler(Form1_MouseClick);
         }
 
@@ -36,8 +36,7 @@ namespace test
         {
            clickCount=(clickCount+1)%icons.Length;
             this.Icon = new Icon(icons[clickCount]);
-
-          string iconName=icons[clickCount].Split('.')[0];
+            string iconName = icons[clickCount].Split('.')[0];
             this.Text = iconName;
         }
     }
